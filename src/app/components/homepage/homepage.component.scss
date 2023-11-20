@@ -1,0 +1,23 @@
+[nz-carousel-content] {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #fff;
+  color: #fff;
+  overflow: hidden;
+}
+
+.custom-carousel {
+  .slick-slide {
+    //transition: opacity 4s ease 1s; /* Set your desired transition time here */
+    animation:  linear infinite;
+    animation-duration: 100s ;
+    transform: translate(-50%);
+  }
+}
+
+h3 {
+  color: #fff;
+  margin-bottom: 0;
+  user-select: none;
+}
