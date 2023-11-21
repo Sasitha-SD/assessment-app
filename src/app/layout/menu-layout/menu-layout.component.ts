@@ -39,7 +39,6 @@ export class MenuLayoutComponent {
       }
       default: {
         return this.dessertItems.slice(0, 3)
-        break;
       }
     }
   }

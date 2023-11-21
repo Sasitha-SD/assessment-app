@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, NgIterable} from '@angular/core';
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MealDbApiService} from "../../core/services/meal-db-api.service";
@@ -50,6 +50,27 @@ export class InformationComponent {
     console.log(this.dessertItems);
 
     this.ngxService.stop();
+  }
+
+  switchItems(index: any): NgIterable<any> {
+    switch (index) {
+      case 0: {
+        return this.beefItems.slice(0, 3)
+      }
+      case 1: {
+        return this.seafoodItems.slice(0, 3)
+      }
+      default: {
+        return this.dessertItems.slice(0, 3)
+      }
+    }
+  }
+
+  onClickItem(tempCategory: string, tempItem: string) {
+    this.ngOnInit()
+    // this.router.navigate(["/menu"], {queryParams: {category: tempCategory, item: tempItem}});
+    this.router.navigate(["menu", tempCategory, tempItem])
+
   }
 
 

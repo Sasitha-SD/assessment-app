@@ -5,27 +5,15 @@
   </nz-breadcrumb-item>
   <nz-breadcrumb-item>{{data.item}}</nz-breadcrumb-item>
 </nz-breadcrumb>
-<nz-dropdown-menu #menu="nzDropdownMenu">
-  <div class="row">
-    <div class="col-4 p-0 m-o">
-      <ul nz-menu nzSelectable>
-        <li nz-menu-item>General</li>
-        <li nz-menu-item>Layout</li>
-        <li nz-menu-item>Navigation</li>
-      </ul>
-    </div>
-    <div class="col-4 p-0 m-o">
-      <ul nz-menu nzSelectable>
-        <li nz-menu-item>General</li>
-        <li nz-menu-item>Layout</li>
-        <li nz-menu-item>Navigation</li>
-      </ul>
-    </div>
-    <div class="col-4 p-0 m-o">
-      <ul nz-menu nzSelectable>
-        <li nz-menu-item>General</li>
-        <li nz-menu-item>Layout</li>
-        <li nz-menu-item>Navigation</li>
+<nz-dropdown-menu nzTrigger="click" #menu="nzDropdownMenu">
+  <div class="row" >
+    <div class="col-4 m-0" *ngFor="let category of categories.slice(0,3);
+  let categoryIndex = index">
+      <ul nz-menu nzSelectable >
+        <li nz-menu-item>{{category.strCategory}}</li>
+        <div class="col-12" *ngFor=" let item of switchItems(categoryIndex)">
+          <li (click)="onClickItem(category.strCategory,item.strMeal)" nz-menu-item>{{item.strMeal}}</li>
+        </div>
       </ul>
     </div>
   </div>
