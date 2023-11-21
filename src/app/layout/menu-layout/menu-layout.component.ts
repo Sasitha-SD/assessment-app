@@ -25,6 +25,7 @@ export class MenuLayoutComponent {
 
   }
 
+  //switch items
   switchItems(index: any): NgIterable<any> {
     switch (index) {
       case 0: {

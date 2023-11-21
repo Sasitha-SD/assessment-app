@@ -43,6 +43,7 @@ export class InformationComponent {
     this.dessertItems = await this.mealDbService.getItemByCategories('Dessert');
   }
 
+  //switch items
   switchItems(index: any): NgIterable<any> {
     switch (index) {
       case 0: {
@@ -62,7 +63,6 @@ export class InformationComponent {
     this.router.onSameUrlNavigation = "reload";
     this.router.navigate(["menu", tempCategory, tempItem]);
   }
-
 
   ngOnDestroy() {
     this.paramsSubscription.unsubscribe();

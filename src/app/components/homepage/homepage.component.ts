@@ -14,18 +14,19 @@ export class HomepageComponent implements OnInit {
   categories: any = {};
   randomMeal: any = []
 
-  constructor(private router: Router, private mealDbService: MealDbApiService, private ngxService: NgxUiLoaderService) {
+  constructor(private router: Router, private mealDbService: MealDbApiService,
+              private ngxService: NgxUiLoaderService) {
   }
 
   async ngOnInit(): Promise<any> {
-    this.ngxService.start();
+    this.ngxService.start(); //animation loader start
     this.categories = await this.mealDbService.getCategories();
     await this.getRandomMeal()
     console.log(this.categories);
-    this.ngxService.stop();
-
+    this.ngxService.stop(); //animation loader stop
   }
 
+  //carousel config
   carouselOptionsPrimary: OwlOptions = {
     mouseDrag: false,
     touchDrag: false,
@@ -43,20 +44,21 @@ export class HomepageComponent implements OnInit {
 
       },
       400: {
-        items: 2,
-
-      },
-      740: {
         items: 3,
 
       },
+      740: {
+        items: 5,
+
+      },
       940: {
-        items: 4,
+        items: 7,
       }
     },
     nav: false
   }
 
+  //carousel config
   carouselOptionsSecondary: OwlOptions = {
     mouseDrag: false,
     touchDrag: false,
@@ -74,15 +76,15 @@ export class HomepageComponent implements OnInit {
 
       },
       400: {
-        items: 2,
-
-      },
-      740: {
         items: 3,
 
       },
+      740: {
+        items: 5,
+
+      },
       940: {
-        items: 4,
+        items: 7,
       }
     },
     nav: false
@@ -92,12 +94,11 @@ export class HomepageComponent implements OnInit {
     this.router.navigate(["/menu"]);
   }
 
-  //gets a randomMeal image
+  //get a random Meal image amd push to array
   async getRandomMeal(): Promise<any> {
     for (let i = 0; i < 3; i++) {
       let meal = await this.mealDbService.getRandomMeal();
       this.randomMeal.push(meal.strMealThumb)
-      console.log(this.randomMeal);
     }
 
   }
