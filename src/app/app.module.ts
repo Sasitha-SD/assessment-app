@@ -16,7 +16,7 @@ import {HomepageComponent} from './components/homepage/homepage.component';
 import {InformationComponent} from './components/information/information.component';
 import {NzCarouselModule} from "ng-zorro-antd/carousel";
 import {CarouselModule} from "ngx-owl-carousel-o";
-import { MenuLayoutComponent } from './layout/menu-layout/menu-layout.component';
+import {MenuLayoutComponent} from './layout/menu-layout/menu-layout.component';
 import {NzMenuModule} from "ng-zorro-antd/menu";
 import {NzBreadCrumbModule} from "ng-zorro-antd/breadcrumb";
 import {NzDropDownModule} from "ng-zorro-antd/dropdown";

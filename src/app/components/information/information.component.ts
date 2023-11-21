@@ -26,30 +26,21 @@ export class InformationComponent {
     this.data = {
       category: this.route.snapshot.params['category'],
       item: this.route.snapshot.params['item']
-
-
     };
+
     this.paramsSubscription = this.route.params.subscribe(
       (params) => {
         this.data.item = params['item'];
         this.data.category = params['category'];
-        console.log(this.data.category);
 
       }
     );
 
-    this.ngxService.start();
-    this.getMeal = await this.mealDbService.getMealByName(this.data.category);
-    console.log(this.getMeal);
+    this.getMeal = await this.mealDbService.getMealByName(this.data.item);
     this.categories = await this.mealDbService.getCategories();
     this.beefItems = await this.mealDbService.getItemByCategories('Beef');
     this.seafoodItems = await this.mealDbService.getItemByCategories('Seafood');
     this.dessertItems = await this.mealDbService.getItemByCategories('Dessert');
-    console.log(this.beefItems);
-    console.log(this.seafoodItems);
-    console.log(this.dessertItems);
-
-    this.ngxService.stop();
   }
 
   switchItems(index: any): NgIterable<any> {
@@ -67,10 +58,9 @@ export class InformationComponent {
   }
 
   onClickItem(tempCategory: string, tempItem: string) {
-    this.ngOnInit()
-    // this.router.navigate(["/menu"], {queryParams: {category: tempCategory, item: tempItem}});
-    this.router.navigate(["menu", tempCategory, tempItem])
-
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = "reload";
+    this.router.navigate(["menu", tempCategory, tempItem]);
   }
 
 

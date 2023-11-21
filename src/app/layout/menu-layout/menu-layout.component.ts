@@ -18,15 +18,11 @@ export class MenuLayoutComponent {
   }
 
   async ngOnInit(): Promise<any> {
-    this.ngxService.start();
     this.categories = await this.mealDbService.getCategories();
     this.beefItems = await this.mealDbService.getItemByCategories('Beef');
     this.seafoodItems = await this.mealDbService.getItemByCategories('Seafood');
     this.dessertItems = await this.mealDbService.getItemByCategories('Dessert');
-    console.log(this.beefItems);
-    console.log(this.seafoodItems);
-    console.log(this.dessertItems);
-    this.ngxService.stop();
+
   }
 
   switchItems(index: any): NgIterable<any> {
@@ -44,9 +40,9 @@ export class MenuLayoutComponent {
   }
 
   onClickItem(tempCategory: string, tempItem: string) {
-    this.ngOnInit()
-    // this.router.navigate(["/menu"], {queryParams: {category: tempCategory, item: tempItem}});
-    this.router.navigate(["menu", tempCategory, tempItem])
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = "reload";
+    this.router.navigate(["menu", tempCategory, tempItem]);
 
   }
 }

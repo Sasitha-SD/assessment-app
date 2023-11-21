@@ -6,10 +6,10 @@
   <nz-breadcrumb-item>{{data.item}}</nz-breadcrumb-item>
 </nz-breadcrumb>
 <nz-dropdown-menu nzTrigger="click" #menu="nzDropdownMenu">
-  <div class="row" >
+  <div class="row">
     <div class="col-4 m-0" *ngFor="let category of categories.slice(0,3);
   let categoryIndex = index">
-      <ul nz-menu nzSelectable >
+      <ul nz-menu nzSelectable>
         <li nz-menu-item>{{category.strCategory}}</li>
         <div class="col-12" *ngFor=" let item of switchItems(categoryIndex)">
           <li (click)="onClickItem(category.strCategory,item.strMeal)" nz-menu-item>{{item.strMeal}}</li>
@@ -17,9 +17,27 @@
       </ul>
     </div>
   </div>
-
 </nz-dropdown-menu>
-<p>second-page works!</p>
-<h2>{{data.item}}</h2>
+
+<div class="row mt-5">
+  <div class="col-sm-12 col-md-12 col-xl-6 d-flex justify-content-center">
+    <img height="300" width="300 " class="text-center" src="{{this.getMeal.strMealThumb}}"
+         alt="{{this.getMeal.strMeal}}">
+  </div>
+  <div class="col-sm-12 col-md-12 col-xl-6 mt-md-4">
+    <div class="row">
+      <div class="col-md-12 d-md-flex justify-content-md-center">
+        <h2> Name:  {{this.getMeal.strMeal}}</h2>
+      </div>
+      <div class="col-md-12 d-md-flex justify-content-md-center">
+        <h2> Dish:  {{this.getMeal.strArea}}</h2>
+      </div>
+      <div class="col-md-12 d-md-flex justify-content-md-center">
+        <h2> Category: {{this.getMeal.strCategory}}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 

@@ -11,12 +11,8 @@ import {NgxUiLoaderService} from "ngx-ui-loader";
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-
   categories: any = {};
   randomMeal: any = []
-
-  array = [1, 2, 3, 4];
-  effect = 'scrollx';
 
   constructor(private router: Router, private mealDbService: MealDbApiService, private ngxService: NgxUiLoaderService) {
   }

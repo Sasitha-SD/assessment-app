@@ -1,4 +1,3 @@
-
 export class SETTINGS {
 
   //TheMealDB API

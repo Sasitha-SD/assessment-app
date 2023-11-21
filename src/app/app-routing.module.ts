@@ -29,7 +29,6 @@ const routes: Routes = [
     component: MenuLayoutComponent,
     children: [
       {
-
         path: ':category/:item',
         component: InformationComponent
       }

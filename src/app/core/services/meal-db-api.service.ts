@@ -10,8 +10,8 @@ import {BehaviorSubject, Subject} from "rxjs";
 export class MealDbApiService {
   categories: any;
   getItem: any;
-  getMeal:any;
-  getRandMeal:any;
+  getMeal: any;
+  getRandMeal: any;
 
   constructor(private http: HttpClient, private message: NzMessageService) {
   }
@@ -44,9 +44,9 @@ export class MealDbApiService {
   getMealByName(payload: string): Promise<any> {
     return new Promise((resolve, reject) => {
       this.http.get(`${SETTINGS.BASE_API}/search.php?s=${payload}`).subscribe((response: any) => {
-        this. getMeal = response.meals[0];
+        this.getMeal = response.meals[0];
         this.message.create('success', 'Meal Found');
-        resolve(this. getMeal);
+        resolve(this.getMeal);
       }, error => {
         reject(error);
         this.message.create('error', 'Unable to load');
@@ -57,8 +57,7 @@ export class MealDbApiService {
   getRandomMeal(): Promise<any> {
     return new Promise((resolve, reject) => {
       this.http.get(`${SETTINGS.BASE_API}/random.php`).subscribe((response: any) => {
-        this.getRandMeal= response.meals[0];
-        console.log(this.getRandMeal);
+        this.getRandMeal = response.meals[0];
         resolve(this.getRandMeal);
       }, error => {
         reject(error);

@@ -1,60 +1,33 @@
-//[nz-carousel-content] {
-//  text-align: center;
-//  height: 160px;
-//  line-height: 160px;
-//  background: #fff;
-//  color: #fff;
-//  overflow: hidden;
-//}
-
-//.custom-carousel {
-//  .slick-slide {
-//    //transition: opacity 4s ease 1s; /* Set your desired transition time here */
-//    animation:  linear infinite;
-//    animation-duration: 100s ;
-//    transform: translate(-50%);
-//  }
-//}
-
-.home-banner{
+.home-banner {
   height: 60vh;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
 
-  .custom-carousel-primary{
+  .custom-carousel-primary {
     padding-top: 50vh;
   }
 
-  .custom-carousel-secondary{
+  .custom-carousel-secondary {
     padding-top: 1rem;
     padding-bottom: 2rem;
   }
 
 }
 
-.scrolling-image{
+.scrolling-image {
   position: relative;
   display: block;
   border-radius: 8px;
 }
 
 
-.image-primary{
+.image-primary {
   width: 240px !important;
   height: 120px;
 }
 
-.image-secondary{
+.image-secondary {
   width: 120px !important;
   height: 120px;
 }
-
-
-
-
-//h3 {
-//  color: #fff;
-//  margin-bottom: 0;
-//  user-select: none;
-//}
