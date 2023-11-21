@@ -12,11 +12,11 @@ import {NgxUiLoaderService} from "ngx-ui-loader";
 export class InformationComponent {
   data!: { item: any; category: any };
   paramsSubscription!: Subscription;
-  getMeal: any = {}
-  categories: any = {}
-  beefItems: any = {}
-  seafoodItems: any = {}
-  dessertItems: any = {}
+  getMeal: any = [];
+  categories: any = [];
+  beefItems: any = [];
+  seafoodItems: any = [];
+  dessertItems: any = [];
 
   constructor(private router: Router, private route: ActivatedRoute, private mealDbService: MealDbApiService,
               private ngxService: NgxUiLoaderService) {
@@ -32,7 +32,6 @@ export class InformationComponent {
       (params) => {
         this.data.item = params['item'];
         this.data.category = params['category'];
-
       }
     );
 
@@ -47,13 +46,13 @@ export class InformationComponent {
   switchItems(index: any): NgIterable<any> {
     switch (index) {
       case 0: {
-        return this.beefItems.slice(0, 3)
+        return this.beefItems.slice(0, 3);
       }
       case 1: {
-        return this.seafoodItems.slice(0, 3)
+        return this.seafoodItems.slice(0, 3);
       }
       default: {
-        return this.dessertItems.slice(0, 3)
+        return this.dessertItems.slice(0, 3);
       }
     }
   }
