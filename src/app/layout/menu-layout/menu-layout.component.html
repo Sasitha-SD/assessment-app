@@ -5,7 +5,8 @@
           *ngFor="let category of categories.slice(0,3); let categoryIndex = index">
         <li nz-submenu nzTitle="{{category.strCategory}}">
           <ul *ngFor=" let item of switchItems(categoryIndex)">
-            <li [routerLink]="['/menu',category.strCategory, item.strMeal]" nz-menu-item>{{item.strMeal}}</li>
+            <!--            <li [routerLink]="['/menu',category.strCategory, item.strMeal]" nz-menu-item>{{item.strMeal}}</li>-->
+            <li (click)="onClickItem(category.strCategory,item.strMeal)" nz-menu-item>{{item.strMeal}}</li>
           </ul>
         </li>
       </ul>

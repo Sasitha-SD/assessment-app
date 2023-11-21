@@ -1,5 +1,5 @@
 import {Component, NgIterable} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {MealDbApiService} from "../../core/services/meal-db-api.service";
 import {NgxUiLoaderService} from "ngx-ui-loader";
 
@@ -14,7 +14,7 @@ export class MenuLayoutComponent {
   seafoodItems: any = {}
   dessertItems: any = {}
 
-  constructor(private mealDbService: MealDbApiService, private ngxService: NgxUiLoaderService) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private mealDbService: MealDbApiService, private ngxService: NgxUiLoaderService) {
   }
 
   async ngOnInit(): Promise<any> {
@@ -42,5 +42,12 @@ export class MenuLayoutComponent {
         break;
       }
     }
+  }
+
+  onClickItem(tempCategory: string, tempItem: string) {
+    this.ngOnInit()
+    // this.router.navigate(["/menu"], {queryParams: {category: tempCategory, item: tempItem}});
+    this.router.navigate(["menu", tempCategory, tempItem])
+
   }
 }
