@@ -43,11 +43,11 @@ export class HomepageComponent implements OnInit {
 
       },
       400: {
-        items: 3,
+        items: 1,
 
       },
       740: {
-        items: 5,
+        items: 3,
 
       },
       940: {
@@ -75,11 +75,11 @@ export class HomepageComponent implements OnInit {
 
       },
       400: {
-        items: 3,
+        items: 1,
 
       },
       740: {
-        items: 5,
+        items: 3,
 
       },
       940: {
