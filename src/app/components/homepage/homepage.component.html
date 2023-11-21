@@ -34,7 +34,7 @@
 <section class="container-fluid home-banner" style="background-image: url('/assets/images/banner1.jpg');">
 
   <div class="custom-carousel-primary">
-    <owl-carousel-o #owlCar [options]="customOptions">
+    <owl-carousel-o #owlCar [options]="carouselOptionsPrimary">
       <ng-template carouselSlide class="">
         <img class="scrolling-image image-primary" src="/assets/images/pizza.jpg" alt="pizza">
       </ng-template>
@@ -51,7 +51,7 @@
   </div>
 
   <div class="custom-carousel-secondary" style="">
-    <owl-carousel-o #owlCar [options]="customOptions">
+    <owl-carousel-o #owlCar [options]="carouselOptionsSecondary">
       <ng-template carouselSlide class="">
         <img class="scrolling-image image-primary" src="/assets/images/pizza.jpg" alt="pizza">
       </ng-template>

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
 import {Router} from "@angular/router";
+import {flush} from "@angular/core/testing";
 
 @Component({
   selector: 'app-homepage',
@@ -15,30 +16,63 @@ export class HomepageComponent {
   constructor(private router: Router) {
   }
 
-  customOptions: OwlOptions = {
+  carouselOptionsPrimary: OwlOptions = {
+    mouseDrag: false,
+    touchDrag: false,
+    center: true,
     dots: false,
     loop: true,
     autoplay: true,
-    autoplayTimeout: 2000,
-    autoplaySpeed: 800,
-    center: true,
-    rewind:false,
-    autoplayHoverPause:false,
     slideTransition: 'linear',
-    animateIn: 'linear',
-    animateOut: 'linear',
+    autoplayTimeout: 4000,
+    smartSpeed: 3900,
+    autoplayHoverPause: false,
     responsive: {
       0: {
-        items: 1
+        items: 1,
+
       },
       400: {
-        items: 2
+        items: 2,
+
       },
       740: {
-        items: 3
+        items: 3,
+
       },
       940: {
-        items: 4
+        items: 4,
+      }
+    },
+    nav: false
+  }
+
+  carouselOptionsSecondary: OwlOptions = {
+    mouseDrag: false,
+    touchDrag: false,
+    center: true,
+    dots: false,
+    loop: true,
+    autoplay: true,
+    slideTransition: 'linear',
+    autoplayTimeout: 4500,
+    smartSpeed: 4400,
+    autoplayHoverPause: false,
+    responsive: {
+      0: {
+        items: 1,
+
+      },
+      400: {
+        items: 2,
+
+      },
+      740: {
+        items: 3,
+
+      },
+      940: {
+        items: 4,
       }
     },
     nav: false
