@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {MainLayoutComponent} from "./layout/main-layout/main-layout.component";
 import {HomepageComponent} from "./components/homepage/homepage.component";
 import {MenuLayoutComponent} from "./layout/menu-layout/menu-layout.component";
-import {SecondPageComponent} from "./components/second-page/second-page.component";
+import {InformationComponent} from "./components/information/information.component";
 
 const routes: Routes = [
   {
@@ -30,8 +30,8 @@ const routes: Routes = [
     children: [
       {
 
-        path: ':item/:category',
-        component: SecondPageComponent
+        path: ':category/:item',
+        component: InformationComponent
       }
 
     ]

@@ -35,34 +35,16 @@
 
   <div class="custom-carousel-primary">
     <owl-carousel-o #owlCar [options]="carouselOptionsPrimary">
-      <ng-template carouselSlide class="">
-        <img class="scrolling-image image-primary" src="/assets/images/pizza.jpg" alt="pizza">
-      </ng-template>
-      <ng-template carouselSlide>
-        <img class="scrolling-image image-secondary" src="/assets/images/pokebBall.jpg" alt="bowl">
-      </ng-template>
-      <ng-template carouselSlide>
-        <img class="scrolling-image image-primary" src="/assets/images/pizza.jpg" alt="pizza">
-      </ng-template>
-      <ng-template carouselSlide>
-        <img class="scrolling-image image-secondary" src="/assets/images/pokebBall.jpg" alt="bowl">
+      <ng-template carouselSlide *ngFor="let category of categories.slice(0,7)">
+        <img class="scrolling-image image-primary" src="{{category.strCategoryThumb}}" alt="{{category.strCategory}}">
       </ng-template>
     </owl-carousel-o>
   </div>
 
   <div class="custom-carousel-secondary" style="">
     <owl-carousel-o #owlCar [options]="carouselOptionsSecondary">
-      <ng-template carouselSlide class="">
-        <img class="scrolling-image image-primary" src="/assets/images/pizza.jpg" alt="pizza">
-      </ng-template>
-      <ng-template carouselSlide>
-        <img class="scrolling-image image-secondary" src="/assets/images/pokebBall.jpg" alt="bowl">
-      </ng-template>
-      <ng-template carouselSlide>
-        <img class="scrolling-image image-primary" src="/assets/images/pizza.jpg" alt="pizza">
-      </ng-template>
-      <ng-template carouselSlide>
-        <img class="scrolling-image image-secondary" src="/assets/images/pokebBall.jpg" alt="bowl">
+      <ng-template carouselSlide *ngFor="let category of categories.slice(7,14)">
+        <img class="scrolling-image image-primary" src="{{category.strCategoryThumb}}" alt="{{category.strCategory}}">
       </ng-template>
     </owl-carousel-o>
   </div>
@@ -70,32 +52,12 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <img class="img-fluid"   (click)="onClickImage()" src="/assets/images/pokebBall.jpg" alt="bowl">
-      </div>
-      <div class="col-md-4">
-        <img class="img-fluid" src="/assets/images/pokebBall.jpg" alt="bowl">
-      </div>
-      <div class="col-md-4">
-        <img class="img-fluid" src="/assets/images/pokebBall.jpg" alt="bowl">
+      <div class="col-md-4" *ngFor="let meal of randomMeal">
+        <img class="img-fluid" (click)="onClickImage()" src="{{meal}}">
       </div>
     </div>
   </div>
 </section>
-
-<!--<div class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="col-md-4">-->
-<!--      <img class="img-fluid"  src="/assets/images/pokebBall.jpg" alt="bowl">-->
-<!--    </div>-->
-<!--    <div class="col-md-4">-->
-<!--      <img class="img-fluid" src="/assets/images/pokebBall.jpg" alt="bowl">-->
-<!--    </div>-->
-<!--    <div class="col-md-4">-->
-<!--      <img class="img-fluid" src="/assets/images/pokebBall.jpg" alt="bowl">-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 
 
 

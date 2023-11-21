@@ -1,19 +1,33 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
 import {Router} from "@angular/router";
 import {flush} from "@angular/core/testing";
+import {MealDbApiService} from "../../core/services/meal-db-api.service";
+import {NgxUiLoaderService} from "ngx-ui-loader";
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
+
+  categories: any = {};
+  randomMeal: any = []
 
   array = [1, 2, 3, 4];
   effect = 'scrollx';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private mealDbService: MealDbApiService, private ngxService: NgxUiLoaderService) {
+  }
+
+  async ngOnInit(): Promise<any> {
+    this.ngxService.start();
+    this.categories = await this.mealDbService.getCategories();
+    await this.getRandomMeal()
+    console.log(this.categories);
+    this.ngxService.stop();
+
   }
 
   carouselOptionsPrimary: OwlOptions = {
@@ -80,6 +94,16 @@ export class HomepageComponent {
 
   onClickImage() {
     this.router.navigate(["/menu"]);
+  }
+
+  //gets a randomMeal image
+  async getRandomMeal(): Promise<any> {
+    for (let i = 0; i < 3; i++) {
+      let meal = await this.mealDbService.getRandomMeal();
+      this.randomMeal.push(meal.strMealThumb)
+      console.log(this.randomMeal);
+    }
+
   }
 
 }
