@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-homepage',
@@ -11,6 +12,8 @@ export class HomepageComponent {
   array = [1, 2, 3, 4];
   effect = 'scrollx';
 
+  constructor(private router: Router) {
+  }
 
   customOptions: OwlOptions = {
     dots: false,
@@ -39,6 +42,10 @@ export class HomepageComponent {
       }
     },
     nav: false
+  }
+
+  onClickImage() {
+    this.router.navigate(["/menu"]);
   }
 
 }
