@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/scss/fonts";
+@import "src/assets/scss/global-variables.scss";
+
+html, body {
+  height: 100%;
+  font-family: $font-primary;
+  font-size: 14px;
+}
+
+
+
+
+
