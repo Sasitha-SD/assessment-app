@@ -3,7 +3,7 @@
   <div class="custom-carousel-primary">
     <owl-carousel-o #owlCar [options]="carouselOptionsPrimary">
       <ng-template carouselSlide *ngFor="let category of categories.slice(0,7)">
-        <img class="scrolling-image image-primary" src="{{category.strCategoryThumb}}" alt="{{category.strCategory}}">
+        <img class="scrolling-image image-primary" (click)="onClickImage()" src="{{category.strCategoryThumb}}" alt="{{category.strCategory}}">
       </ng-template>
     </owl-carousel-o>
   </div>
@@ -11,7 +11,7 @@
   <div class="custom-carousel-secondary" style="">
     <owl-carousel-o #owlCar [options]="carouselOptionsSecondary">
       <ng-template carouselSlide *ngFor="let category of categories.slice(7,14)">
-        <img class="scrolling-image image-primary" src="{{category.strCategoryThumb}}" alt="{{category.strCategory}}">
+        <img class="scrolling-image image-primary" (click)="onClickImage()" src="{{category.strCategoryThumb}}" alt="{{category.strCategory}}">
       </ng-template>
     </owl-carousel-o>
   </div>
