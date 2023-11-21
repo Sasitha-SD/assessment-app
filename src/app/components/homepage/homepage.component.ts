@@ -11,7 +11,7 @@ import {NgxUiLoaderService} from "ngx-ui-loader";
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  categories: any = {};
+  categories: any = [];
   randomMeal: any = []
 
   constructor(private router: Router, private mealDbService: MealDbApiService,
@@ -22,7 +22,6 @@ export class HomepageComponent implements OnInit {
     this.ngxService.start(); //animation loader start
     this.categories = await this.mealDbService.getCategories();
     await this.getRandomMeal()
-    console.log(this.categories);
     this.ngxService.stop(); //animation loader stop
   }
 
@@ -52,7 +51,7 @@ export class HomepageComponent implements OnInit {
 
       },
       940: {
-        items: 7,
+        items: 6,
       }
     },
     nav: false
@@ -84,7 +83,7 @@ export class HomepageComponent implements OnInit {
 
       },
       940: {
-        items: 7,
+        items: 6,
       }
     },
     nav: false
