@@ -16,6 +16,10 @@ import {HomepageComponent} from './components/homepage/homepage.component';
 import {SecondPageComponent} from './components/second-page/second-page.component';
 import {NzCarouselModule} from "ng-zorro-antd/carousel";
 import {CarouselModule} from "ngx-owl-carousel-o";
+import { MenuLayoutComponent } from './layout/menu-layout/menu-layout.component';
+import {NzMenuModule} from "ng-zorro-antd/menu";
+import {NzBreadCrumbModule} from "ng-zorro-antd/breadcrumb";
+import {NzDropDownModule} from "ng-zorro-antd/dropdown";
 
 registerLocaleData(en);
 
@@ -25,6 +29,7 @@ registerLocaleData(en);
     MainLayoutComponent,
     HomepageComponent,
     SecondPageComponent,
+    MenuLayoutComponent,
 
   ],
   imports: [
@@ -35,7 +40,10 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     NgxUiLoaderModule,
     NzCarouselModule,
-    CarouselModule
+    CarouselModule,
+    NzMenuModule,
+    NzBreadCrumbModule,
+    NzDropDownModule
   ],
   providers: [
     {provide: NZ_I18N, useValue: en_US}

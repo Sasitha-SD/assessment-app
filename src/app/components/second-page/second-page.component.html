@@ -1,1 +1,37 @@
+<nz-breadcrumb>
+  <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+  <nz-breadcrumb-item [nzOverlay]="menu">
+    <a> {{data.category}}</a>
+  </nz-breadcrumb-item>
+  <nz-breadcrumb-item>{{data.item}}</nz-breadcrumb-item>
+</nz-breadcrumb>
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <div class="row">
+    <div class="col-4 p-0 m-o">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item>General</li>
+        <li nz-menu-item>Layout</li>
+        <li nz-menu-item>Navigation</li>
+      </ul>
+    </div>
+    <div class="col-4 p-0 m-o">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item>General</li>
+        <li nz-menu-item>Layout</li>
+        <li nz-menu-item>Navigation</li>
+      </ul>
+    </div>
+    <div class="col-4 p-0 m-o">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item>General</li>
+        <li nz-menu-item>Layout</li>
+        <li nz-menu-item>Navigation</li>
+      </ul>
+    </div>
+  </div>
+
+</nz-dropdown-menu>
 <p>second-page works!</p>
+<h2>where are u?</h2>
+
+
